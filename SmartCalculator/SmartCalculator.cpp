@@ -133,6 +133,12 @@ Token GetNextToken(const std::string& expression, size_t& index)
             index++;
         }
 
+        while (index < expression.size()
+            && isspace(expression[index]))
+        {
+            index++;
+        }
+
         if (index < expression.size()
             && expression[index] == '=')
         {
